@@ -123,16 +123,6 @@ function difIntersecArreglos($arregloA, $arregloB){
     return $arregloC;
 }
 
-/**
- * Función que muestra por panralla 2 arreglos.
- */
-function mostrarArreglo(array $arreglo)
-{
-    echo "Arreglo ingresado: ";
-    print_r($arreglo);
-    echo "\n";
-}
-
 //Ejercicios.
 
 /*
@@ -186,7 +176,7 @@ function ej3()
 function ej4()
 {
     $arreglo = randValArray();
-    mostrarArreglo($arreglo);
+    print_r($arreglo);
 
     return "Valor mínimo es: " . min($arreglo) . " en la posición " . (array_search(min($arreglo), $arreglo) + 1) .
         "\nValor máximo es: " . max($arreglo) . " en la posición " . (array_search(max($arreglo), $arreglo) + 1);
@@ -224,9 +214,9 @@ function ej7()
 {
     //Agregar una cantidad de valores aleatorios a los arreglos.
     $arregloA = randValArray();
-    mostrarArreglo($arregloA);
+    print_r($arregloA);
     $arregloB = randValArray();
-    mostrarArreglo($arregloB);
+    print_r($arregloB);
 
     return sumaArray($arregloA, $arregloB);
 }
@@ -239,9 +229,9 @@ function ej8()
 {
     //Agregar una cantidad de valores aleatorios a los arreglos.
     $arregloA = randValArray();
-    mostrarArreglo($arregloA);
+    print_r($arregloA);
     $arregloB = randValArray();
-    mostrarArreglo($arregloB);
+    print_r($arregloB);
 
     return difIntersecArreglos($arregloA, $arregloB);
 }
