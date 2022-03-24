@@ -1,5 +1,100 @@
 \documentclass{article}
+\usepackage[paperheight=297mm, paperwidth=210mm, top=15mm, bottom=20mm, left=25mm, right=25mm]{geometry}
+\usepackage{hyperref}
+\title{Documento de Ejercicios del \textit{TP1} de \textit{IPOO-2022}.}
+\author{\textbf{\textit{Alan Cristian Gaston Vera}}}
+\date{}
 
 \begin{document}
-Documento de respuestas.
+\maketitle
+\section*{Ejercicio 1.}
+
+\textbf{a. Objeto: }\\
+\indent \indent \indent \indent En general los objetos son una forma ordenada de agrupar datos y operaciones a realizar sobre ellos.
+\\
+\textbf{b. Clase:}\\
+\indent \indent \indent \indent Definición del tipo, donde serán indicados los atributos y metodos que van a tener todas las variables que sean de ese tipo.
+\\
+\textbf{c. Método:}\\
+\indent \indent \indent \indent Define cómo se va a comportar el objeto. Ej: Una persona puede hablar, caminar, etc.
+\\
+\textbf{d. Atibuto:}\\
+\indent \indent \indent \indent Define el estado del objeto. Ej: Una persona tiene un nombre, una edad, una altura, etc.
+
+\section*{Ejercicio 2.}
+
+\quad Ambos nombres \textit{(\textbf{variable instancia} e \textbf{instancia de una clase})} hacen
+referencia a una variable que ha sido creada como tipo de objeto de una clase.
+Esto quiere decir que una variable instancia es de un tipo de objeto, 
+pero cabe destacar que esta puede ser diferente a otra variable que es instancia del mismo objeto. \par
+\textbf{Ej: }\\
+\indent var1 = new Clase1();\\ \indent var2 = new Clase1();\\
+\indent Las variables \textit{\textbf{var1}} y \textit{\textbf{var2}} son instancias de la clase \textbf{Clase1}. Tienen atributos y métodos similares pero estas variables no son iguales.
+
+\section*{Ejercicio 3.}
+
+\textbf{(C) = Clase\\(M) = Método\\(A) = Atributo}\\
+\begin{tabular}{llll}
+mouse (C)                 & reloj (C)           & persona (C)         & inalambrico (A)       \\
+televisor (C)             & mover (M)           & darHoraActual (M)   & ponerHora (M)         \\
+darCanalActual (M)        & fechaNacimiento (A) & irCanalTv (M)       & documento (C)         \\
+configurarDespertador (M) & encender (M)        & fechaNacimiento (A) & darPosicionActual (M)
+\end{tabular}
+
+\section*{Ejercicio 4.}
+
+\begin{enumerate}
+    \item Reloj: \\\indent \textbf{Atributos:} 
+    \\\textit{hora, minutos, segundos} 
+    \\\textbf{Métodos:} 
+    \\\textit{darHoraActual, ponerHora, incrementarHora, incrementarMinutos, incrementarSegundos}
+    \item Taza: \\\indent \textbf{Atributos:} 
+    \\\textit{capacidad, color} 
+    \\\textbf{Métodos:} 
+    \\\textit{darCapacidad, ponerCapacidad}
+    \newpage
+    \item Billetera: \\\indent \textbf{Atributos:} 
+    \\\textit{dineros, tarjetas} 
+    \\\textbf{Métodos:} 
+    \\\textit{darDinero, ponerDinero}
+    \item Monitor: \\\indent \textbf{Atributos:} 
+    \\\textit{resolucion, marca, ppi, led} 
+    \\\textbf{Métodos:} 
+    \\\textit{darResolucion, prenderLED, apagarLED}
+    \item Celular: \\\indent \textbf{Atributos:} 
+    \\\textit{marca, modelo, color, sistemaOperativo} 
+    \\\textbf{Métodos:} 
+    \\\textit{encender, darMarca, ponerMarca, darModelo, darColor, darSistemaOperativo}
+\end{enumerate}
+
+\section*{Ejercicio 5.}
+
+\indent Archivo Persona.php encontrado en carpeta TP1. \par
+
+\indent \textbf{Clase Persona:}
+\begin{itemize}
+    \item \textbf{Atributos:}\\ 
+    \textit{nombre, edad, altura, peso, sexo}
+    \item \textbf{Métodos:}\\
+    \textit{Setters y getters de cada atributo, construct, desctruct, toString, crecerAltura y cumplirAnios}
+\end{itemize}
+
+\section*{Ejercicio 6.}
+Los métodos que deben estar en todos las clases de objetos son:
+\begin{itemize}
+    \item \indent \textbf{Constructor: \textit{"\_\_construct()\{\}}"}\\\indent \indent \textit{Se ejecuta cuando se crea un objeto de la clase.}
+    \item \indent \textbf{Destructor: \textit{"\_\_destruct()\{\}}"}\\\indent \indent \textit{Se ejecuta cuando se destruye un objeto de la clase.}
+\end{itemize}
+
+\section*{Ejercicio 7.}
+
+\indent El método \textit{"\textbf{\_\_toString()}"} sirve para visualizar los valores 
+de las variables instancias de un objeto. Este método retorna un string 
+(Cadena de caracteres) con la información a visualizar y es invocado cada 
+vez que se llama a la función \textit{echo}.
+
+\section*{Ejercicio 8.}
+
+
+
 \end{document}

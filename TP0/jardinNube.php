@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Función que inicializa un arreglo predefinido.
  * @return array
  */
-function inicializarArreglo(){
+function inicializarArreglo()
+{
     $arreglo = [
         ["nombre" => "Juanito", "tutor" => ["nombre" => "", "apellido" => ""], "fechaNacimiento" => "15-6-2017", "sexo" => "masculino"],
         ["nombre" => "Cucu", "tutor" => ["nombre" => "", "apellido" => ""], "fechaNacimiento" => "22-3-2017", "sexo" => "femenino"],
@@ -20,11 +22,12 @@ function inicializarArreglo(){
  * @param $fechaNacimiento
  * @return int
  */
-function calcularEdad($fechaNacimiento){
+function calcularEdad($fechaNacimiento)
+{
     $fechaActual = date("d-m-Y");
     $fechaNacimiento = strtotime($fechaNacimiento);
     $fechaActual = strtotime($fechaActual);
-    $edad = ($fechaActual - $fechaNacimiento)/(60*60*24*365);
+    $edad = ($fechaActual - $fechaNacimiento) / (60 * 60 * 24 * 365);
     return floor($edad);
 }
 
@@ -34,10 +37,11 @@ function calcularEdad($fechaNacimiento){
  * @param $alumnos
  * @return array
  */
-function ordenarSalitas($alumnos){
+function ordenarSalitas($alumnos)
+{
     $alumnoYSalita = [];
 
-    foreach($alumnos as $alumno){
+    foreach ($alumnos as $alumno) {
         array_push($alumnoYSalita, [
             "nombre" => $alumno["nombre"],
             "edad" => calcularEdad($alumno["fechaNacimiento"]),
@@ -51,10 +55,11 @@ function ordenarSalitas($alumnos){
 /**
  * Función main.
  */
-function main(){
+function main()
+{
     $alumnos = ordenarSalitas(inicializarArreglo());
 
-    foreach($alumnos as $alumno){
+    foreach ($alumnos as $alumno) {
         echo "El alumno " . $alumno["nombre"] . " tiene " . $alumno["edad"] . " años y va a la salita " . $alumno["salita"] . ".\n";
     }
 }
