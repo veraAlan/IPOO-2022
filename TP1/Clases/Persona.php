@@ -67,6 +67,6 @@ class Persona
 
     public function __destruct()
     {
-        return $this . " instancia destruida, no hay referencias a este objeto. \n";
+        echo $this . " instancia destruida, no hay referencias a este objeto. \n";
     }
 }

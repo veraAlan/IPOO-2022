@@ -8,6 +8,28 @@ cuatrocientos, en cuyo caso si son bisiestos.
 Nota 2: Para la solución de este problema puede ser útil definir un método incrementa_un_dia.
 
 <?php
+include "funcionesFecha.php";
+
 class Fecha
 {
+    private $dia;
+    private $mes;
+    private $anio;
+
+    public function __construct($fecha)
+    {
+        $arregloFecha = explode("-", $fecha, 3);
+        if (fechaValida($arregloFecha)) {
+            $this->dia = $arregloFecha[0];
+            $this->mes = $arregloFecha[1];
+            $this->anio = $arregloFecha[2];
+        } else {
+            throw new ErrorException("Formato ingresado invalido. Formato adecuado: (dd-mm-AAAA)");
+        }
+    }
+
+    public function __toString()
+    {
+        echo "Fecha: " . $this->dia  . " " . $this->mes . " " . $this->anio . "\n";
+    }
 }
