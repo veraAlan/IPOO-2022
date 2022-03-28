@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[paperheight=297mm, paperwidth=210mm, top=15mm, bottom=20mm, left=25mm, right=25mm]{geometry}
+\usepackage{hyperref}
+\title{Documento de Apuntes de teoría de \textbf{\textit{IPOO-2022}}}
+\author{\textbf{\textit{Alan Cristian Gaston Vera}}}
+\date{}
+
+\section{Objeto}
+
+En general, se puede decir que un objeto es una forma ordenada de agrupar datos
+\textit{(atributos)} y operaciones a utili zar \textit{(métodos)}. \par
+Cuando decimos objeto podemos estar referenciando dos cosas distintas.
+Por un lado, \textit{la definción del tipo}, donde se indican cuáles son
+los atributos y métodos que van a tener tods las variables que sean de ese tipo.
+A esta definicón se la llama \textit{\textbf{clase}} del objeto. \par
+A partir de una clase es posible \textit{crear distintas variables que son de ese tipo}.
+A las variables que son de una clase se las llama \textit{instancia} de esa clase. \par
+\begin{itemize}
+    \item \textit{Los objetos tienen estado y comportamiento.}
+\end{itemize}
+
+\section*{Clases}
+
+Aqui se crea la propia definción de los objetos. En estas se encuentran varibales llamadas atributos y
+métodos, que anteriormente se nombraron cómo \textit{"estado"} y \textit{"comportamiento"}. \par
+
+\subsection*{Atributos:}
+
+Estos son las variables creadas dentro de la clase, donde van a almacenar el estado de esta.
+Las variables se declaran de forma \textit{privada} para que únicamente sean accedidas por los
+métodos \textbf{set/get} de la misma clase.
+
+\subsection*{Métodos:}
+
+Estas funcioens se dedican a darle comportamiento a la clase. Existen muchas funciones, pero las
+principales son:
+\begin{itemize}
+    \item \textbf{\_\_construct()}: Es llamado cuando se crea una instancia de la clase para inicializar las variables.
+    \item \textbf{\_\_destruct()}: Es llamado cuando no se encuentra otra referencia al objeto determinadoo cualquier circunstancia de finalización.
+    \item \textbf{\_\_toString()}: Es llamado cuando se hace un \textit{echo} de la variable instancia.
+    \item \textbf{set\_NombreVariable()}: Esta función setter se crea para cambiar el valor de una varibale.
+    \item \textbf{get\_Nombre()}: Esta función getter se crea para conseguir un valor de una variable, sin modificarlo.
+    \item \textbf{nombre()}: Se pueden agregar funciones para realizar operaciones necesarias.
+\end{itemize}
+
+\small{\textit{\indent .Nombres de métodos documentados:} \_\_construct(), \_\_destruct(), \_\_call(), \_\_callStatic(), \_\_get(), \_\_set(), \_\_is-
+    set(), \_\_unset(), \_\_sleep(), \_\_wakeup(), \_\_toString(), \_\_invoke(), \_\_set_state(), \_\_clone() y \_\_de-bugInfo()}
+
+\section*{Delegación:}
+
+Se "delegará" cuando una clase contiene (cómo atributos) una o más instancias de 
+otra clase, a las que delegará parte de su uncionalidad. \par 
+
+
+\subsection*{Referencia:}
+
+Estas son las variables que permiten que se pueda acceder a un determinado
+objeto, ya sea un atributo dentro de un objeto, o una ariable en alguna parte del código.
