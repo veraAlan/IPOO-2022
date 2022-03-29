@@ -20,16 +20,49 @@ class Fecha
     {
         $arregloFecha = explode("-", $fecha, 3);
         if (fechaValida($arregloFecha)) {
-            $this->dia = $arregloFecha[0];
-            $this->mes = $arregloFecha[1];
-            $this->anio = $arregloFecha[2];
+            $this->setDia($arregloFecha[0]);
+            $this->setMes($arregloFecha[1]);
+            $this->setAnio($arregloFecha[2]);
         } else {
             throw new ErrorException("Formato ingresado invalido. Formato adecuado: (dd-mm-AAAA)");
         }
     }
 
+    public function setDia($dia)
+    {
+        $this->dia = $dia;
+    }
+
+    public function setMes($mes)
+    {
+        $this->mes = $mes;
+    }
+
+    public function setAnio($anio)
+    {
+        $this->anio = $anio;
+    }
+
+    public function incremento($dias, $fecha)
+    {
+        $arregloFecha = explode("-", $fecha, 3);
+        $arregloFecha[0] += $dias;
+        do {
+            $arregloFecha[0] -= diasMax($arregloFecha[1], $arregloFecha[2]);
+            if ($arregloFecha[1] == 12) {
+                $arregloFecha[1] = 1;
+                $arregloFecha[2]++;
+            } else {
+                $arregloFecha[1]++;
+            }
+        } while ($arregloFecha[0] > diasMax($arregloFecha[1], $arregloFecha[2]));
+        $this->setDia($arregloFecha[0]);
+        $this->setMes($arregloFecha[1]);
+        $this->setAnio($arregloFecha[2]);
+    }
+
     public function __toString()
     {
-        echo "Fecha: " . $this->dia  . " " . $this->mes . " " . $this->anio . "\n";
+        return "Fecha abreviada: " . $this->dia  . "/" . $this->mes . "/" . $this->anio . "\nFecha extendida: " . $this->dia . " de " . numeroAMes($this->mes) . " de " . $this->anio . "\n";
     }
 }
