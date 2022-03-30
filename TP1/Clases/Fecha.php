@@ -12,22 +12,20 @@ include "funcionesFecha.php";
 
 class Fecha
 {
+    // Atributos
     private $dia;
     private $mes;
     private $anio;
 
-    public function __construct($fecha)
+    // Constructor
+    public function __construct($dia, $mes, $anio)
     {
-        $arregloFecha = explode("-", $fecha, 3);
-        if (fechaValida($arregloFecha)) {
-            $this->setDia($arregloFecha[0]);
-            $this->setMes($arregloFecha[1]);
-            $this->setAnio($arregloFecha[2]);
-        } else {
-            throw new ErrorException("Formato ingresado invalido. Formato adecuado: (dd-mm-AAAA)");
-        }
+        $this->dia = $dia;
+        $this->mes = $mes;
+        $this->anio = $anio;
     }
 
+    // Setters
     public function setDia($dia)
     {
         $this->dia = $dia;
@@ -43,26 +41,48 @@ class Fecha
         $this->anio = $anio;
     }
 
-    public function incremento($dias, $fecha)
+    // Getters
+    public function getDia()
     {
-        $arregloFecha = explode("-", $fecha, 3);
-        $arregloFecha[0] += $dias;
-        do {
-            $arregloFecha[0] -= diasMax($arregloFecha[1], $arregloFecha[2]);
-            if ($arregloFecha[1] == 12) {
-                $arregloFecha[1] = 1;
-                $arregloFecha[2]++;
-            } else {
-                $arregloFecha[1]++;
-            }
-        } while ($arregloFecha[0] > diasMax($arregloFecha[1], $arregloFecha[2]));
-        $this->setDia($arregloFecha[0]);
-        $this->setMes($arregloFecha[1]);
-        $this->setAnio($arregloFecha[2]);
+        return $this->dia;
     }
 
+    public function getMes()
+    {
+        return $this->mes;
+    }
+
+    public function getAnio()
+    {
+        return $this->anio;
+    }
+
+    // Métodos
+    public function incremento($diasIncremento, $dia, $mes, $anio)
+    {
+        $dia += $diasIncremento;
+        do {
+            $dia -= diasMax($mes, $anio);
+            if ($mes == 12) {
+                $mes = 1;
+                $anio++;
+            } else {
+                $mes++;
+            }
+        } while ($dia > diasMax($mes, $anio));
+        $this->setDia($dia);
+        $this->setMes($mes);
+        $this->setAnio($anio);
+    }
+
+    // To String
     public function __toString()
     {
-        return "Fecha abreviada: " . $this->dia  . "/" . $this->mes . "/" . $this->anio . "\nFecha extendida: " . $this->dia . " de " . numeroAMes($this->mes) . " de " . $this->anio . "\n";
+        return "Fecha abreviada: " . $this->getDia()  . "/" . $this->getMes() . "/" . $this->getAnio() . "\nFecha extendida: " . $this->dia . " de " . numeroAMes($this->mes) . " de " . $this->anio . "\n";
+    }
+
+    // Destructor
+    public function __destruct(){
+        echo "Instancia de " . get_class() . " destruida.";
     }
 }

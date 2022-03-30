@@ -1,9 +1,5 @@
 <?php
-/**
- * Funcion para comprobar si los dígitos ingresados en el arreglo son de una fecha válida.
- * @param $arregloFecha Arreglo con la fecha separada por dia, mes y año.
- * @return bool
- */
+/* 
 function fechaValida($arreglo)
 {
     $valido = false;
@@ -47,7 +43,7 @@ function fechaValida($arreglo)
     }
 
     return $valido;
-}
+} */
 
 /**
  * Función para comprobar si un número tiene la cantidad de $n digitos o menos.
