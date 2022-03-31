@@ -32,3 +32,15 @@ $calculadoraUsuario = new Calculadora($valor_x, $valor_y);
 $calculadoraUsuario->$operacion();
 
 echo "Resultado: " . $calculadoraUsuario . "\n";
+$otraOperacion = readline("\n¿Desea realizar otra operación? (s/n): ");
+while($otraOperacion == "s") {
+    $valor_x = readline("\nIngrese el primer valor: ");
+    $valor_y = readline("Ingrese el segundo valor: ");
+    $operacion = readline("Ingrese la operación a realizar (suma, resta, multiplicacion, division): ");
+    $calculadoraUsuario->setValor_x($valor_x);
+    $calculadoraUsuario->setValor_y($valor_y);
+    $calculadoraUsuario->$operacion();
+
+    echo "Resultado: " . $calculadoraUsuario . "\n";
+    $otraOperacion = readline("\n¿Desea realizar otra operación? (s/n): ");
+}
