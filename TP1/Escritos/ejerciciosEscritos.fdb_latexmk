@@ -1,10 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1648514035 "d:/Coding/IDEs/VSCode Workspaces/UNCo/IPOO-2022/TP1/Escritos/ejerciciosEscritos.tex" "ejerciciosEscritos.pdf" "ejerciciosEscritos" 1648514036
+["pdflatex"] 1648775054 "d:/Coding/IDEs/VSCode Workspaces/UNCo/IPOO-2022/TP1/Escritos/ejerciciosEscritos.tex" "ejerciciosEscritos.pdf" "ejerciciosEscritos" 1648775055
   "C:/Users/alan_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1648075297 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/alan_/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbi1000.pk" 1648514034 14612 7507a4d4e3d8cb26d0194be08327137a ""
+  "C:/Users/alan_/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcbx1000.pk" 1648754207 12124 6e33f9827b1a352b1a4b0864a8c7239c ""
   "C:/Users/alan_/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1648065919 11548 ee8155f902428f841dd9159bd93d52bd ""
   "C:/Users/alan_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1648014392 10246961 80045e127c8fab7ac0a9ff01102960fb ""
   "C:/Users/alan_/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcbi1000.tfm" 993062462 1632 892008a118951f179b27a581b3b55638 ""
+  "C:/Users/alan_/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcbx1000.tfm" 993062478 1456 278016b1e421c8e979679e0372f68bf1 ""
   "C:/Users/alan_/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "C:/Users/alan_/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbsy10.tfm" 1136765053 1116 4e6ba9d7914baa6482fd69f67d126380 ""
   "C:/Users/alan_/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -67,10 +69,10 @@
   "C:/Users/alan_/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/alan_/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1575571282 9715 b051d5b493d9fe5f4bc251462d039e5f ""
   "C:/Users/alan_/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "d:/Coding/IDEs/VSCode Workspaces/UNCo/IPOO-2022/TP1/Escritos/ejerciciosEscritos.tex" 1648514019 5164 3a0b53786d36445533c09c163f750607 ""
-  "ejerciciosEscritos.aux" 1648514036 686 470fdebd29f279999e89f3533b8c7bc8 "pdflatex"
-  "ejerciciosEscritos.out" 1648514036 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "ejerciciosEscritos.tex" 1648514019 5164 3a0b53786d36445533c09c163f750607 ""
+  "d:/Coding/IDEs/VSCode Workspaces/UNCo/IPOO-2022/TP1/Escritos/ejerciciosEscritos.tex" 1648775052 6155 1a4e41c02e6d77f98cc1a2e954eedbe3 ""
+  "ejerciciosEscritos.aux" 1648775055 686 470fdebd29f279999e89f3533b8c7bc8 "pdflatex"
+  "ejerciciosEscritos.out" 1648775055 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "ejerciciosEscritos.tex" 1648775052 6155 1a4e41c02e6d77f98cc1a2e954eedbe3 ""
   (generated)
   "ejerciciosEscritos.aux"
   "ejerciciosEscritos.log"
