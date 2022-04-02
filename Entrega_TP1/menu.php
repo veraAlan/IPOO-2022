@@ -3,14 +3,14 @@ function menu()
 {
     echo
     "\n◢==============================◣\n" .
-    "|        MENU PRINCIPAL        |\n" .
-    "¦==============================¦\n" .
-    "| 1. Crear un viaje            |\n" .
-    "| 2. Agregar pasajero          |\n" .
-    "| 3. Eliminar pasajero         |\n" .
-    "| 4. Mostrar datos del viaje   |\n" .
-    "| 5. Salir                     |\n" .
-    "◥==============================◤\n\n";
+        "|        MENU PRINCIPAL        |\n" .
+        "¦==============================¦\n" .
+        "| 1. Crear un viaje            |\n" .
+        "| 2. Agregar pasajero          |\n" .
+        "| 3. Eliminar pasajero         |\n" .
+        "| 4. Mostrar datos del viaje   |\n" .
+        "| 5. Salir                     |\n" .
+        "◥==============================◤\n\n";
 }
 
 function verDatos($obj)
@@ -39,7 +39,7 @@ function eliminarPasajero($obj)
 
 function destinoExiste($destinos, $codigo)
 {
-    foreach($destinos as $destino) {
+    foreach ($destinos as $destino) {
         if ($destino->getCodigo() == $codigo) {
             return true;
         }
@@ -66,14 +66,14 @@ function main()
                 break;
             case 2:
                 $codigo = readline("Ingrese el codigo del viaje: ");
-                if(destinoExiste($destinos, $codigo)){
+                if (destinoExiste($destinos, $codigo)) {
                     if ($$codigo->hayCapacidad()) {
                         agPasajero($$codigo);
                     } else {
                         echo "Excede el limite de pasajeros.\n";
                     };
                 } else {
-                    echo "No existe el viaje de codigo " . $codigo . ".\n";
+                    echo "\nNo existe el viaje de codigo " . $codigo . ".\n";
                 }
                 break;
             case 3:
@@ -81,7 +81,7 @@ function main()
                 if (destinoExiste($destinos, $codigo)) {
                     eliminarPasajero($$codigo);
                 } else {
-                    echo "No existe el viaje de codigo " . $codigo . ".\n";
+                    echo "\nNo existe el viaje de codigo " . $codigo . ".\n";
                 };
                 break;
             case 4:
@@ -89,7 +89,7 @@ function main()
                 if (destinoExiste($destinos, $codigo)) {
                     verDatos($$codigo);
                 } else {
-                    echo "No existe el viaje de codigo " . $codigo . ".\n";
+                    echo "\nNo existe el viaje de codigo " . $codigo . ".\n";
                 };
                 break;
             case 5:
