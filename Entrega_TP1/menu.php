@@ -1,4 +1,7 @@
 <?php
+/**
+ * Metodo menu que muestra por pantalla las opciones del programa.
+ */
 function menu()
 {
     echo
@@ -13,12 +16,20 @@ function menu()
         "◥==============================◤\n\n";
 }
 
-function verDatos($obj)
+/**
+ * Metodo para visualizar los datos de un viaje.
+ * @param object $viaje
+ */
+function verDatos($codViaje)
 {
-    echo $obj;
+    echo $codViaje;
 }
 
-function agPasajero($obj)
+/**
+ * Metodo para agregar un pasajero a un viaje especifico.
+ * @param object $codViaje
+ */
+function agPasajero($codViaje)
 {
     echo "\n◢===============================\n";
     $nombre = readline("Ingrese el nombre del pasajero: ");
@@ -26,30 +37,44 @@ function agPasajero($obj)
     $dni = readline("Ingrese el dni del pasajero: ");
     echo "◥===============================\n\n";
 
-    $obj->agregarPasajero(new Pasajero($nombre, $apellido, $dni));
+    $codViaje->agregarPasajero(new Pasajero($nombre, $apellido, $dni));
 }
 
-function eliminarPasajero($obj)
+/**
+ * Metodo para eliminar un pasajero de un viaje especifico.
+ * @param object $codViaje
+ */
+function eliminarPasajero($codViaje)
 {
     echo "\n◢===============================\n";
     $nombre = readline("Ingrese el DNI del pasajero a eliminar: ");
-    $obj->eliminarPasajero($nombre);
+    $codViaje->eliminarPasajero($nombre);
     echo "◥===============================\n\n";
 }
 
-function destinoExiste($destinos, $codigo)
+/**
+ * Metodo para buscar en el almacenamiento si existe un viaje con el codigo ingresado.
+ * @param array $destinosAlmacenados
+ * @param string $codViaje
+ * @return bool
+ */
+function destinoExiste($destinosAlmacenados, $codViaje)
 {
-    foreach ($destinos as $destino) {
-        if ($destino->getCodigo() == $codigo) {
+    foreach ($destinosAlmacenados as $destino) {
+        if ($destino->getCodigo() == $codViaje) {
             return true;
         }
     }
     return false;
 }
 
+/**
+ * Metodo main.
+ * Muestra el menu y ejecuta las funciones correspondientes.
+ */
 function main()
 {
-    $destinos = [];
+    $destinosAlmacenados = [];
     do {
         menu();
         $opcion = readline("Ingrese una opcion: ");
@@ -57,39 +82,39 @@ function main()
             case 1:
                 echo "\n◢===============================\n";
                 $destino = readline("Ingrese el destino: ");
-                $codigo = readline("Ingrese el codigo: ");
+                $codViaje = readline("Ingrese el codViaje: ");
                 $cantMaxPasajeros = readline("Ingrese la cantidad maxima de pasajeros: ");
                 echo "◥===============================\n\n";
-                $$codigo = new Viaje($destino, $codigo, $cantMaxPasajeros);
-                array_push($destinos, $$codigo);
+                $$codViaje = new Viaje($destino, $codViaje, $cantMaxPasajeros);
+                array_push($destinosAlmacenados, $$codViaje);
                 echo "Viaje con destino a " . $destino . " creado.\n";
                 break;
             case 2:
-                $codigo = readline("Ingrese el codigo del viaje: ");
-                if (destinoExiste($destinos, $codigo)) {
-                    if ($$codigo->hayCapacidad()) {
-                        agPasajero($$codigo);
+                $codViaje = readline("Ingrese el codViaje del viaje: ");
+                if (destinoExiste($destinosAlmacenados, $codViaje)) {
+                    if ($$codViaje->hayCapacidad()) {
+                        agPasajero($$codViaje);
                     } else {
                         echo "Excede el limite de pasajeros.\n";
                     };
                 } else {
-                    echo "\nNo existe el viaje de codigo " . $codigo . ".\n";
+                    echo "\nNo existe el viaje de codViaje " . $codViaje . ".\n";
                 }
                 break;
             case 3:
-                $codigo = readline("Ingrese el codigo del viaje: ");
-                if (destinoExiste($destinos, $codigo)) {
-                    eliminarPasajero($$codigo);
+                $codViaje = readline("Ingrese el codViaje del viaje: ");
+                if (destinoExiste($destinosAlmacenados, $codViaje)) {
+                    eliminarPasajero($$codViaje);
                 } else {
-                    echo "\nNo existe el viaje de codigo " . $codigo . ".\n";
+                    echo "\nNo existe el viaje de codViaje " . $codViaje . ".\n";
                 };
                 break;
             case 4:
-                $codigo = readline("Ingrese el codigo del viaje: ");
-                if (destinoExiste($destinos, $codigo)) {
-                    verDatos($$codigo);
+                $codViaje = readline("Ingrese el codViaje del viaje: ");
+                if (destinoExiste($destinosAlmacenados, $codViaje)) {
+                    verDatos($$codViaje);
                 } else {
-                    echo "\nNo existe el viaje de codigo " . $codigo . ".\n";
+                    echo "\nNo existe el viaje de codViaje " . $codViaje . ".\n";
                 };
                 break;
             case 5:

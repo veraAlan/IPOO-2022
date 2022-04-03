@@ -53,6 +53,10 @@ class Viaje
         return $this->cantMaxPasajeros;
     }
 
+    /**
+     * Metodo que devuelve la lista de pasajeros en forma de string de la instancia actual de Viaje.
+     * @return string
+     */
     public function getStringPasajeros()
     {
         if (count($this->pasajeros) > 0) {
@@ -67,13 +71,22 @@ class Viaje
     }
 
     // Métodos
+    /**
+     * Metodo que agrega un pasajero a la instancia actual de Viaje.
+     * @param object $pasajero
+     */
     public function agregarPasajero($pasajero)
     {
-        if (count($this->pasajeros) < $this->cantMaxPasajeros) {
+        if ($this->hayCapacidad()) {
             $this->setPasajero($pasajero);
         }
     }
 
+    /**
+     * Metodo que comprueba la existencia de un pasajero en la instancia actual de Viaje.
+     * @param string $dni
+     * @return bool
+     */
     private function existePasajero($dni)
     {
         foreach ($this->pasajeros as $pasajero) {
@@ -84,6 +97,10 @@ class Viaje
         return false;
     }
 
+    /**
+     * Metodo que elimina un pasajero buscandolo por su dni en la instancia actual de Viaje.
+     * @param string $dni
+     */
     public function eliminarPasajero($dni)
     {
         if ($this->existePasajero($dni)) {
@@ -98,6 +115,9 @@ class Viaje
         }
     }
 
+    /**
+     * Metodo que devuelve si hay capacidad para agregar un pasajero a la instancia actual de Viaje.
+     */
     public function hayCapacidad()
     {
         return count($this->pasajeros) < $this->cantMaxPasajeros;
@@ -116,6 +136,6 @@ class Viaje
 
     public function __destruct()
     {
-        echo "Instancia de viaje a " . $this->getDestino() . " destruida.\n";
+        return "Instancia de viaje a " . $this->getDestino() . " destruida.\n";
     }
 }
