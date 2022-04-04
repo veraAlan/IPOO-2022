@@ -4,7 +4,12 @@ class Pasajero {
     private $apellido;
     private $dni;
 
-    // Constructor
+    /**
+     * Constructor
+     * @param string $nombre
+     * @param string $apellido
+     * @param mixed $dni
+     */
     public function __construct($nombre, $apellido, $dni) {
         $this->setNombre($nombre);
         $this->setApellido($apellido);
@@ -12,15 +17,15 @@ class Pasajero {
     }
 
     // Setter
-    public function setNombre($nombre) {
+    private function setNombre($nombre) {
         $this->nombre = $nombre;
     }
 
-    public function setApellido($apellido) {
+    private function setApellido($apellido) {
         $this->apellido = $apellido;
     }
 
-    public function setDni($dni) {
+    private function setDni($dni) {
         $this->dni = $dni;
     }
 

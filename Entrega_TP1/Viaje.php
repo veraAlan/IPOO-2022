@@ -6,7 +6,12 @@ class Viaje
     private $cantMaxPasajeros;
     private $pasajeros;
 
-    // Constructor
+    /**
+     * Constructor
+     * @param string $destino
+     * @param string $codigo
+     * @param int $cantMaxPasajeros
+     */
     public function __construct($destino, $codigo, $cantMaxPasajeros)
     {
         $this->setDestino($destino);
@@ -16,22 +21,22 @@ class Viaje
     }
 
     // Setter
-    private function setDestino($destino)
+    public function setDestino($destino)
     {
         $this->destino = $destino;
     }
 
-    private function setCodigo($codigo)
+    public function setCodigo($codigo)
     {
         $this->codigo = $codigo;
     }
 
-    private function setCantMaxPasajeros($cantMaxPasajeros)
+    public function setCantMaxPasajeros($cantMaxPasajeros)
     {
         $this->cantMaxPasajeros = $cantMaxPasajeros;
     }
 
-    private function setPasajero($pasajero)
+    public function setPasajero($pasajero)
     {
         $nuevoPasajero = ["Nombre" => $pasajero->getNombre(), "Apellido" => $pasajero->getApellido(), "DNI" => $pasajero->getDni()];
         array_push($this->pasajeros, $nuevoPasajero);
@@ -53,11 +58,17 @@ class Viaje
         return $this->cantMaxPasajeros;
     }
 
+    public function getPasajeros()
+    {
+        return $this->getStringPasajeros();
+    }
+
+    // Métodos
     /**
      * Metodo que devuelve la lista de pasajeros en forma de string de la instancia actual de Viaje.
      * @return string
      */
-    public function getStringPasajeros()
+    private function getStringPasajeros()
     {
         if (count($this->pasajeros) > 0) {
             $stringPasajeros = "Pasajeros: \nNombre Apellido DNI\n";
@@ -70,7 +81,14 @@ class Viaje
         return $stringPasajeros;
     }
 
-    // Métodos
+    /**
+     * Metodo que devuelve si hay capacidad para agregar un pasajero a la instancia actual de Viaje.
+     */
+    public function hayCapacidad()
+    {
+        return count($this->pasajeros) < $this->cantMaxPasajeros;
+    }
+
     /**
      * Metodo que agrega un pasajero a la instancia actual de Viaje.
      * @param object $pasajero
@@ -79,6 +97,7 @@ class Viaje
     {
         if ($this->hayCapacidad()) {
             $this->setPasajero($pasajero);
+            echo "Pasajero " . $pasajero->getNombre() . " " . $pasajero->getApellido() . " agregado\n";
         }
     }
 
@@ -87,7 +106,7 @@ class Viaje
      * @param string $dni
      * @return bool
      */
-    private function existePasajero($dni)
+    public function existePasajero($dni)
     {
         foreach ($this->pasajeros as $pasajero) {
             if ($pasajero["DNI"] == $dni) {
@@ -113,14 +132,6 @@ class Viaje
         } else {
             echo "No existe el pasajero.\n";
         }
-    }
-
-    /**
-     * Metodo que devuelve si hay capacidad para agregar un pasajero a la instancia actual de Viaje.
-     */
-    public function hayCapacidad()
-    {
-        return count($this->pasajeros) < $this->cantMaxPasajeros;
     }
 
     // Funciones magicas
