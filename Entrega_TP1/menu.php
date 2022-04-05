@@ -5,7 +5,7 @@
 function menu()
 {
     echo
-    "\n◢==============================◣\n" .
+    "\n+==============================+\n" .
         "|        MENU PRINCIPAL        |\n" .
         "¦==============================¦\n" .
         "| 1. Crear un viaje            |\n" .
@@ -13,7 +13,7 @@ function menu()
         "| 3. Eliminar pasajero         |\n" .
         "| 4. Mostrar datos del viaje   |\n" .
         "| 5. Salir                     |\n" .
-        "◥==============================◤\n\n";
+        "+==============================+\n\n";
 }
 
 /**
@@ -31,11 +31,11 @@ function verDatos($codViaje)
  */
 function agPasajero($codViaje)
 {
-    echo "\n◢===============================\n";
+    echo "\n+===============================\n";
     $nombre = readline("Ingrese el nombre del pasajero: ");
     $apellido = readline("Ingrese el apellido del pasajero: ");
     $dni = readline("Ingrese el dni del pasajero: ");
-    echo "◥===============================\n\n";
+    echo "+===============================\n\n";
 
     $codViaje->agregarPasajero(new Pasajero($nombre, $apellido, $dni));
 }
@@ -46,10 +46,10 @@ function agPasajero($codViaje)
  */
 function eliminarPasajero($codViaje)
 {
-    echo "\n◢===============================\n";
+    echo "\n+===============================\n";
     $nombre = readline("Ingrese el DNI del pasajero a eliminar: ");
     $codViaje->eliminarPasajero($nombre);
-    echo "◥===============================\n\n";
+    echo "+===============================\n\n";
 }
 
 /**
@@ -80,11 +80,11 @@ function main()
         $opcion = readline("Ingrese una opcion: ");
         switch ($opcion) {
             case 1:
-                echo "\n◢===============================\n";
+                echo "\n+===============================\n";
                 $destino = readline("Ingrese el destino: ");
                 $codViaje = readline("Ingrese el codigo: ");
                 $cantMaxPasajeros = readline("Ingrese la cantidad maxima de pasajeros: ");
-                echo "◥===============================\n\n";
+                echo "+===============================\n\n";
                 $$codViaje = new Viaje($destino, $codViaje, $cantMaxPasajeros);
                 array_push($destinosAlmacenados, $$codViaje);
                 echo "Viaje con destino a " . $destino . " creado.\n";

@@ -137,12 +137,12 @@ class Viaje
     // Funciones magicas
     public function __toString()
     {
-        return "\n◢=======================================◣" .
+        return "\n+=======================================+" .
             "\nDestino: " . $this->getDestino() .
             "\nCodigo: " . $this->getCodigo() .
             "\nCantidad maxima de pasajeros: " . $this->getCantMaxPasajeros() .
             "\n" . $this->getStringPasajeros() .
-            "\n◥=======================================◤\n";
+            "\n+=======================================+\n";
     }
 
     public function __destruct()
