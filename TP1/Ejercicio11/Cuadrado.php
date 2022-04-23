@@ -10,23 +10,21 @@ class Cuadrado
     // Constructor
     public function __construct($v1, $v2, $v3, $v4)
     {
-        $this->setV1($v1);
-        $this->setV2($v2);
-        $this->setV3($v3);
-        $this->setV4($v4);
-        /* if (count($v1) == 2 && count($v2) == 2 && count($v3) == 2 && count($v4) == 2) {
-        $vertices = ordenarVertices($v1, $v2 . $v3 . $v4);
-            if (esUnCuadrado()) {
-                $this->setV1($vertices[0]);
-                $this->setV2($vertices[1]);
-                $this->setV3($vertices[2]);
-                $this->setV4($vertices[3]);
+        $vertices = array($v1, $v2, $v3, $v4);
+
+        $vertices = $this->ordenarVertices($vertices);
+        try {
+            if ($this->esCuadrado($vertices)) {
+                $this->vInfIz = $vertices[0];
+                $this->vInfDe = $vertices[1];
+                $this->vSupIz = $vertices[2];
+                $this->vSupDe = $vertices[3];
             } else {
-                throw new Exception("Los vertices ingresados no son de un cuadrado.")
+                throw new Exception("Los vertices no forman un cuadrado.");
             }
-        } else {
-            throw new Exception("Los valores deben ser un arreglo de dos elementos.");
-        } */
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        }
     }
 
     // Setters
@@ -53,43 +51,73 @@ class Cuadrado
     // Getters
     public function getV1()
     {
-        return $this->vInfIz;
+        return $this->vInfIz->getX() . "," . $this->vInfIz->getY();
     }
 
     public function getV2()
     {
-        return $this->vInfDe;
+        return $this->vInfDe->getX() . "," . $this->vInfDe->getY();
     }
 
     public function getV3()
     {
-        return $this->vSupIz;
+        return $this->vSupIz->getX() . "," . $this->vSupIz->getY();
     }
 
     public function getV4()
     {
-        return $this->vSupDe;
+        return $this->vSupDe->getX() . "," . $this->vSupDe->getY();
     }
 
     // Metodos
-    /* public function ordernarVertices($arregloVertices)
+    private function ordenarVertices($vertices)
     {
-    } */
+        function cmp($a, $b)
+        {
+            if ($a->getX() == $b->getX() && $a->getY() == $b->getY()) {
+                return 0;
+            }
 
-    /* public function area()
+            return ($a->getX() < $b->getX()) ? -1 : 1;
+        };
+
+        uasort($vertices, 'cmp');
+
+        return array_values($vertices);
+    }
+
+    private function esCuadrado($vertices)
     {
-        $l = $this->getV1()->distancia($this->getV2());
-        return;
-    } */
+        $v1 = $vertices[0];
+        $v2 = $vertices[1];
+        $v3 = $vertices[2];
+        $v4 = $vertices[3];
 
-    /* public function desplazar($d)
+        if ($v1->getX() == $v1->getY() && $v4->getX() == $v4->getY()) {
+            if ($v1->getX() == $v2->getX() && $v3->getX() == $v4->getX() && $v1->getY() == $v3->getY() && $v2->getY() == $v4->getY()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function area()
     {
-    } */
+        $lado = $this->vInfIz->distancia($this->vInfDe);
+        return $lado * $lado;
+    }
 
+    public function desplazar($d)
+    {
+        
+    }
+    
     // Funciones magicas
     public function __toString()
     {
-        return "[" . $this->getV3()[0] . "] [" . $this->getV4()[0] . "] \n" .
-            "[" . $this->getV1()[0] . "] [" . $this->getV2()[0] . "]\n";
+        return "Cuadrado:\n[" . $this->getV3() . "] [" . $this->getV4() . "] \n" .
+            "[" . $this->getV1() . "] [" . $this->getV2() . "]\n" .
+            "Area: " . $this->area() . "\n";
     }
 }
