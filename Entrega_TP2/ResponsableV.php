@@ -51,13 +51,11 @@ class ResponsableV
     public function setApellido($apellido)
     {
         return $this->apellido = $apellido;
-
     }
 
     public function setNumeroEmpleado($numeroEmpleado)
     {
         return $this->numeroEmpleado = $numeroEmpleado;
-
     }
 
     public function setlicencia($licencia)
@@ -68,10 +66,10 @@ class ResponsableV
     // Funciones magicas
     public function __toString()
     {
-        return "Nombre: " . $this->getNombre() . 
-                "\nApellido: " . $this->getApellido() . 
-                "\nNumero Empleado: " . $this->getNumeroEmpleado() . 
-                "\nNumero Licencia: " . $this->getlicencia();
+        return "Nombre: " . $this->getNombre() .
+            "\nApellido: " . $this->getApellido() .
+            "\nNumero Empleado: " . $this->getNumeroEmpleado() .
+            "\nNumero Licencia: " . $this->getlicencia();
     }
 
     public function __destruct()
